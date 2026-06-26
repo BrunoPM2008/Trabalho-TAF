@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    <link rel="shortcut icon" href="{{ url_for('static', filename='Imagens/icon.png') }}" type="image/x-icon">
+    <title>Teste de TAF</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="page">
+        <div class="top">
+            <img src="{{ url_for('static', filename='Imagens/icon.png') }}" alt="Icone" class="icon">
+            <h1>REGISTRO DE TESTE DE APTIDÃO FISÍCA (TAF) <p>Painel de Cadastro de Resultados e Classificação</p></h1>
+        </div>
+        <div class="center">
+            <form id="formSoldado">
+                <table>
+                    <tr>
+                        <td colspan="2"><label for="nome">Nome Do Militar</label><input type="text" id="nome" placeholder="Nome" required></td>
+                        <td><label for="corrida">Distancia percorrida (Metros)</label><input type="number" id="corrida" placeholder="Corrida" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="flexao">Flexões (Repetição)</label><input type="number" id="flexao" placeholder="Flexão" required></td>
+                        <td><label for="abdominal">Abdominais (Repetição)</label><input type="number" id="abdominal" placeholder="Abdominal" required></td>
+                        <td><label for="barra">Barra Fixa (Repetição)</label><input type="number" id="barra" placeholder="Barra Fixa" required></td>
+                    </tr>
+                </table>
+                <center><button type="submit" id="submitButton">Cadastrar Resultado</button></center>
+            </form>
+
+            <div>
+                <h1>LISTA DE COLOCADOS (RANKING TAF)</h1>
+                <hr>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Colocação</td>
+                            <td>Nome</td>
+                            <td>Distancia percorrida</td>
+                            <td>Flexão</td>
+                            <td>Abdominal</td>
+                            <td>Barra Fixa</td>
+                            <td>Pontuação Total</td>
+                            <td>Excluir</td>
+                            <td>Editar</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaSoldados">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <article class="esquerda">
+                <img src="{{ url_for('static', filename='Imagens/esquerda1.svg') }}" class="soldiers">
+                <img src="{{ url_for('static', filename='Imagens/esquerda2.svg') }}" class="soldiers">
+            </article>
+            <article class="direita">
+                <img src="{{ url_for('static', filename='Imagens/direita1.svg') }}" class="soldiers">
+                <img src="{{ url_for('static', filename='Imagens/direita2.png') }}" class="soldiers">
+            </article>
+        </div>
+
+    </section>
+</body>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</html>
